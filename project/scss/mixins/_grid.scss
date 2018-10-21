@@ -1,4 +1,4 @@
-@mixin mq-container-width() {
+@mixin mq-container-dimensions() {
     @each $bp-name, $bp-width in $grid-breakpoints {
         @if ($bp-name == default) {
             max-width: map_get($container-max-widths, $bp-name);
@@ -9,6 +9,8 @@
                 max-width: map_get($container-max-widths, $bp-name);
             }
         }
+
+        padding: 0 map_get($padding-breakpoints, $bp-name);
     }
 }
 

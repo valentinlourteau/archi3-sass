@@ -15,9 +15,7 @@
 }
 
 .container {
-    margin: 0 auto;
-
-    @include mq-container-width();
+    @include mq-container-dimensions();
 
     &.container-expend {
         max-width: none;

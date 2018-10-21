@@ -1,6 +1,4 @@
 .card {
-    width: 750px;
-
     @each $color, $value in $colors {
         &.#{$color}-card {
             background-color: $value;

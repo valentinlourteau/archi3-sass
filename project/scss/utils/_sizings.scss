@@ -27,3 +27,18 @@ $directions: (
         }
     }
 }
+
+.width-xxl {
+    @each $bp-name, $bp-width in $grid-breakpoints {
+        @if ($bp-name == default) {
+            width: 100%;
+        }
+
+        @else {
+            @media only screen and (min-width: $bp-width) {
+                width: 750px;
+                max-width: 100%;
+            }
+        }
+    }
+}
