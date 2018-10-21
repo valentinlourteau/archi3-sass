@@ -1,0 +1,49 @@
+.body {
+    background: #272727 50% 50%/cover no-repeat fixed;
+}
+
+.page {
+    border-width: 20px;
+    border: 20px solid transparent;
+    border-top-width: 0;
+    background: #fff;
+    margin: auto;
+
+    @media only screen and (min-width: 1560px) {
+        max-width: 1560px;
+    }
+}
+
+.container {
+    margin: 0 auto;
+
+    @include mq-container-width();
+
+    &.container-expend {
+        max-width: none;
+    }
+
+    .row {
+        @include flex-row();
+
+        margin-left: -$gutter;
+        margin-right: -$gutter;
+
+        [class^="col-"] {
+            @include flex-col();
+
+            padding-left: $gutter;
+            padding-right: $gutter;
+            margin-bottom: $gutter * 2;
+            position: relative;
+
+            .row {
+                margin-bottom: -$gutter * 2;
+            }
+        }
+
+        @for $i from 1 through $cols-number {
+            @include mq-create-column($i);
+        }
+    }
+}

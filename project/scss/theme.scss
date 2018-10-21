@@ -1,0 +1,22 @@
+html {
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+.testette-ancestrale {
+    font-size: lightness(#b7a088);
+}
+
+@import "_variables";
+@import "functions/_accessibility";
+@import "mixins/_normalize";
+@import "mixins/_grid";
+@import "utils/_sizings";
+@import "components/_color";
+@import "components/_grid";
+@import "components/_card";
+@import "components/_button";
+@import "components/_navbar";
+@import "components/_sections";

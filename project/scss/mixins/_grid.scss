@@ -1,0 +1,33 @@
+@mixin mq-container-width() {
+    @each $bp-name, $bp-width in $grid-breakpoints {
+        @if ($bp-name == default) {
+            max-width: map_get($container-max-widths, $bp-name);
+        }
+
+        @else {
+            @media only screen and (min-width: $bp-width) {
+                max-width: map_get($container-max-widths, $bp-name);
+            }
+        }
+    }
+}
+
+@mixin mq-create-column($i) {
+    @each $bp-name, $bp-width in $grid-breakpoints {
+        $colname: if($bp-name == "default", "", "-#{$bp-name}");
+
+        @if ($bp-name == default) {
+            .col#{$colname}-#{$i} {
+                width: $i / $cols-number * 100%;
+            }
+        }
+
+        @else {
+            @media only screen and (min-width: $bp-width) {
+                .col#{$colname}-#{$i} {
+                    width: $i / $cols-number * 100%;
+                }
+            }
+        }
+    }
+}

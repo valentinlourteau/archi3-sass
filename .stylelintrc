@@ -1,0 +1,12 @@
+{
+    "extends": ["stylelint-config-standard", "stylelint-config-recommended-scss"],
+    "rules": {
+        "indentation": 4,
+        "color-named": "never",
+        "max-empty-lines": 3,
+        "max-line-length": null,
+        "no-missing-end-of-source-newline": true,
+        "string-quotes": "double",
+        "value-keyword-case": "lower"
+    }
+}

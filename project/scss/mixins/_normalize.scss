@@ -1,0 +1,18 @@
+@mixin flex-classic() {
+    display: flex;
+    flex-grow: 1;
+}
+
+@mixin flex-row() {
+    @include flex-classic();
+
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+@mixin flex-col() {
+    @include flex-classic();
+
+    flex-direction: column;
+    flex-wrap: nowrap;
+}

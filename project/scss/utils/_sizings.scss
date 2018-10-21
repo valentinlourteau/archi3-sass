@@ -1,0 +1,29 @@
+$spacers: (
+    1: 10px,
+    2: 20px,
+    3: 30px,
+    4: 40px,
+    5: 50px,
+) !default;
+
+$properties: (
+    "p" : "padding",
+    "m" : "margin"
+) !default;
+
+$directions: (
+    "t" : "top",
+    "b" : "bottom",
+    "r" : "right",
+    "l" : "left"
+) !default;
+
+@each $min-property, $property in $properties {
+    @each $min-direction, $direction in $directions {
+        @each $format, $value in $spacers {
+            .#{$min-property}#{$min-direction}-#{$format} {
+                #{$property}-#{$direction}: #{$value};
+            }
+        }
+    }
+}

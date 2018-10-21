@@ -1,0 +1,35 @@
+.btn {
+    height: 40px;
+    margin: 0;
+    border: none;
+    overflow: visible;
+    font: inherit;
+    color: inherit;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 25px;
+    vertical-align: middle;
+    font-size: 14px;
+    line-height: 38px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    letter-spacing: 0;
+    border-radius: 500px;
+
+    &:not(:disabled) {
+        cursor: pointer;
+    }
+
+    &.btn-primary {
+        @extend .brown;
+
+        color: contrasted-color(map_get($colors, "brown"));
+    }
+
+    &.btn-secondary {
+        @extend .blue;
+
+        color: contrasted-color(map_get($colors, "blue"));
+    }
+}
